@@ -7,10 +7,13 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 class Home extends Component {
-  handleSearchBarSubmit = function (query) {
+  handleSearchBarSubmit(query) {
     this.props.fetchPostsWithQuery(query);
     this.props.history.push("/results");
-  };
+    this.props.fetchPostsWithQuery(query, () => {
+      this.props.history.push("/results");
+    });
+  }
 
   render() {
     return (
