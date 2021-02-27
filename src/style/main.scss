@@ -15,7 +15,7 @@ body {
   width: 66vw;
   display: grid;
   align-content: space-around;
-  justify-items: stretch;
+  // justify-items: stretch;
   // grid-template-rows: 1fr 2fr 1fr;
 }
 
@@ -25,7 +25,15 @@ body {
   justify-items: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 $color-gray-one: #666666;
 $color-gray-two: #b3b3b3;
+$color-blue-one: #0079ff;
 
 @import "./searchBar.scss";
+@import "./recentPosts.scss";
