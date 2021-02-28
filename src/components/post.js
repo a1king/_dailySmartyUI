@@ -54,6 +54,8 @@ class Post extends Component {
               onMouseLeave={() => this.setState({ height: 0 })}
             >
               {this.props.title}
+              <a />
+              {this.props.title}
             </a>
           </div>
           <AnimatedHeight duration={500} height={this.state.height}>
