@@ -8,12 +8,16 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
+  padding: 240px;
 }
 
 .logo-main,
 .recent-posts {
-  display: grid;
   justify-items: center;
+  display: grid;
+  gap: normal;
+  grid-template-columns: 1267.19px;
+  grid-template-rows: 108px;
 }
 
 ul {

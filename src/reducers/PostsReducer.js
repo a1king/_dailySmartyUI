@@ -2,7 +2,7 @@ import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from "../actions/types";
 
 const INIT_STATE = {
   resultsPosts: [],
-  recentPost: [],
+  recentPosts: [],
 };
 
 export default function (state = INIT_STATE, action) {
@@ -18,7 +18,7 @@ export default function (state = INIT_STATE, action) {
       const resultsPosts = action.payload;
       return {
         ...state,
-        posts: resultsPosts,
+        resultsPosts,
       };
 
     default:

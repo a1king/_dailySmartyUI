@@ -34,9 +34,10 @@ class Post extends Component {
     if (link.includes(".html")) {
       link = link.substring(0, link.length - 5);
     }
-    if (link.includes(".htm")) {
+    if (link.includes(".html")) {
       link = link.substring(0, link.length - 4);
     }
+
     return link;
   }
 
@@ -56,7 +57,6 @@ class Post extends Component {
     if (links == 0) {
       return <div className="no-content">No Post Links</div>;
     }
-
     return links;
   }
 
@@ -64,11 +64,13 @@ class Post extends Component {
     if (this.props.type == "recent") {
       return (
         <li className="recent-post">
-          <div className="recent-post__title">{this.props.title}</div>
+          <div className="recent-post__title">
+            <a href={this.props.url_for_post}>{this.props.title}</a>
+          </div>
           <div className="recent-post__topics">{this.renderTopics()}</div>
         </li>
       );
-    } else if (this.props.type == "link") {
+    } else if (this.props.type == "result") {
       return (
         <li
           className="result-post"
@@ -77,15 +79,11 @@ class Post extends Component {
         >
           <div className="result-post__topics">{this.renderTopics()}</div>
           <div className="result-post__title">
-            <a href={this.props.url_for_post}>
-              {this.props.title}
-              <a />
-              {this.props.title}
-            </a>
+            <a href={this.props.url_for_post}>{this.props.title}</a>
           </div>
-          <AnimatedHeight duration={500} height={this.state.height}>
+          <AnimateHeight duration={500} height={this.state.height}>
             <div className="result-post__links">{this.renderLinks()}</div>
-          </AnimatedHeight>
+          </AnimateHeight>
         </li>
       );
     }

@@ -1,4 +1,4 @@
-import React, { Componet } from "react";
+import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import Post from "./post";
@@ -15,8 +15,7 @@ class ResultsPosts extends Component {
     return (
       <div className="results-posts">
         <div className="results-posts__wrapper">
-          <ul className="results-posts__posts">RESULTS GO HERE</ul>
-          {this.renderPosts()}
+          <ul className="results-posts__posts">{this.renderPosts()}</ul>
         </div>
       </div>
     );
